@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Serve static content
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
