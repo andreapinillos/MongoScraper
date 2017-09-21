@@ -12,12 +12,6 @@ p {
 	margin-top: 1%;
 }
 
-h1, p{
-    color: white;
-    text-align: center;
-    font: bold;
-}
-
 #bodyinput {
     width: 50%;
 }
@@ -35,6 +29,9 @@ h1, p{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: white;
+    text-align: center;
+    font-weight: bold;
 }
 
 .panel-heading.row {

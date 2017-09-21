@@ -1,11 +1,7 @@
 var express = require("express");
-
 var router = express.Router();
-
 var request = require("request");
-
 var cheerio = require("cheerio");
-
 var mongoose = require("mongoose");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -65,7 +61,7 @@ router.post("/scrape", function(req, res) {
 
     });
 
-    console.log("Scraped Articles object built nicely: " + scrapedArticles);
+    console.log("Scraped Poems object built nicely: " + scrapedArticles);
 
     var hbsArticleObject = {
         articles: scrapedArticles
@@ -88,7 +84,7 @@ router.post("/save", function(req, res) {
 
   var entry = new Article(newArticleObject);
 
-  console.log("We can save the article: " + entry);
+  console.log("We can save the poem: " + entry);
 
   // Now, save that entry to the db
   entry.save(function(err, doc) {
@@ -178,7 +174,7 @@ router.post("/articles/:id", function(req, res) {
 
       .exec(function (err, doc) {
         if (err) {
-          console.log("Cannot find article.");
+          console.log("Cannot find poem.");
         } else {
           console.log("On note save we are getting notes? " + doc.notes);
           res.send(doc);
