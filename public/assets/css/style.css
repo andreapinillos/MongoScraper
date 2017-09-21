@@ -12,18 +12,29 @@ p {
 	margin-top: 1%;
 }
 
+h1, p{
+    color: white;
+    text-align: center;
+    font: bold;
+}
+
 #bodyinput {
     width: 50%;
 }
 
 .jumbotron {
 	overflow: hidden;
-    background-size: 50%;
+    /*background-size: 50%;*/
     background-position: center;
-    background-image: url('../images/newspaper.png');
+    opacity: 0.5;
+    background-image: url('../images/poetry.png');
     background-repeat: no-repeat;
     height: 400px;
     width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .panel-heading.row {

@@ -42,14 +42,14 @@ router.get("/savedarticles", function(req, res) {
 router.post("/scrape", function(req, res) {
 
   // First, we grab the body of the html with request
-  request("http://www.nytimes.com/", function(error, response, html) {
+  request("https://hellopoetry.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
 
     // Make emptry array for temporarily saving and showing scraped Articles.
     var scrapedArticles = {};
     // Now, we grab every h2 within an article tag, and do the following:
-    $("article h2").each(function(i, element) {
+    $(".poem-title").each(function(i, element) {
 
       // Save an empty result object
       var result = {};
