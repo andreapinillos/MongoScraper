@@ -23,19 +23,19 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+// Import routes and give the server access to them.
+var routes = require("./controllers/scraper_controller.js");
+
+app.use("/", routes);
+
 // Serve static content
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-// Import routes and give the server access to them.
-var routes = require("./controllers/scraper_controller.js");
-
-app.use("/", routes);
 
 mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj");
 
