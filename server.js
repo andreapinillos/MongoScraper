@@ -24,12 +24,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/scraper_controller.js");
+var router = express.Router()
+require("./controllers/scraper_controller.js")(router)
 
 app.use("/", routes);
 
 // Serve static content
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -37,19 +38,16 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj");
+var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
+// mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj");
 
-var db = mongoose.connection;
-
-// Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
-
-// Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+mongoose.connect(db, function(err){
+	if(error){
+		console.log(error)
+	} else {
+		console.log("mongoose connection is successful")
+	}
+})
 
 // Listen on port 3000
 app.listen(PORT, function() {
