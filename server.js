@@ -29,8 +29,10 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj");
-var db = mongoose.connect;
+mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj",{
+  useMongoClient: true,
+});
+var db = mongoose.connection;
 
 // Show any mongoose errors
 db.on("error", function(error) {
@@ -38,7 +40,7 @@ db.on("error", function(error) {
 });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
+db.once("openUri", function() {
   console.log("Mongoose connection successful.");
 });
 
