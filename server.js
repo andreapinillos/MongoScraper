@@ -12,8 +12,7 @@ var cheerio = require("cheerio");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-var PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3001;
 // Initialize Express
 var app = express();
 
@@ -37,8 +36,11 @@ var routes = require("./controllers/scraper_controller.js");
 
 app.use("/", routes);
 
-mongoose.connect("mongodb://heroku_6qwnq0tj:smpei6n9m46kgldfuen9lhau0r@ds141514.mlab.com:41514/heroku_6qwnq0tj", {
-  useMongoClient: true,
+mongoose.connect(  
+	process.env.MONGODB_URI || "mongodb://localhost/mongoscraper",
+  {
+    useMongoClient: true
+  }
 });
 
 var db = mongoose.connection;
