@@ -7,8 +7,18 @@ This application demonstrates a simple full stack application with a front end i
 
 The user may scrape articles from the specific news website. The user can click on the link to the website and save the article into a database. The user can also add notes and delete saved articles. 
 
-## Demo
-![](./scraper.gif)
+## Image Demo
+#### Home Screen
+![home](images/home.png)
+
+#### Scraper Screen
+![scrape](images/scrape.png)
+
+#### Saved Articles Screen
+![saved](images/saved.png)
+
+#### Note Screen
+![note](images/note.png)
 
 ## Deployment
 
