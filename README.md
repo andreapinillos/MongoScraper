@@ -22,4 +22,4 @@ The user may scrape articles from the specific news website. The user can click 
 
 ## Deployment
 
-[Heroku Deployment found here]](https://mongoscraper1.herokuapp.com).
+[Heroku Deployment found here](https://mongoscraper1.herokuapp.com).
