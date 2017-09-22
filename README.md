@@ -8,7 +8,8 @@ This application demonstrates a simple full stack application with a front end i
 The user may scrape articles from the specific news website. The user can click on the link to the website and save the article into a database. The user can also add notes and delete saved articles. 
 
 ## Demo
-[![Watch the demo](mongoScraperDemoVid.m4v)
+![](./scraper.gif)
+
 ## Deployment
 
 [Heroku Deployment found here]](https://mongoscraper1.herokuapp.com).
