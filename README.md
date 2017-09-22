@@ -9,16 +9,16 @@ The user may scrape articles from the specific news website. The user can click 
 
 ## Image Demo
 #### Home Screen
-![alt text](images/home.png)
+![alt text](./public/assets/images/home.png)
 
 #### Scraper Screen
-![alt text](images/scrape.png)
+![alt text](./public/assets/images/scrape.png)
 
 #### Saved Articles Screen
-![alt text](images/saved.png)
+![alt text](./public/assets/images/saved.png)
 
 #### Note Screen
-![alt text](images/note.png)
+![alt text](./public/assets/images/note.png)
 
 ## Deployment
 
